@@ -1,7 +1,7 @@
 package com.example.demoapp;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +15,9 @@ public class AddServlet extends HttpServlet {
         int j = Integer.parseInt(req.getParameter("num2"));
 
         int k = i + j;
+
+        Cookie cookie = new Cookie("k", k + "");
+        resp.addCookie(cookie);
 
         resp.sendRedirect("sqr?k=" + k);
 
