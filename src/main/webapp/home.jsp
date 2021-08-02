@@ -1,16 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error.jsp" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<%!
-    int coef = 3;
-%>
-<h1>Hello, World!</h1>
+<h1>Heyy, now call Error page</h1> <%-- Not printed --%>
 <%
-    response.getWriter().println(5 + 1);
+    response.getWriter().println("Heyy, now call Error page"); // Not printed
+    int k = 9 / 0;
 %>
-My fav num is : <%=coef%>
 </body>
 </html>
