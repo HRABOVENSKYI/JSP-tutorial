@@ -6,19 +6,24 @@
 
     <servlet>
         <servlet-name>abc</servlet-name>
-        <servlet-class>com.example.demoapp.AddServlet</servlet-class>
+        <servlet-class>com.example.demoapp.MyServlet</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>Sukesh</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>abc</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>pqr</servlet-name>
-        <servlet-class>com.example.demoapp.SquareServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>pqr</servlet-name>
-        <url-pattern>/sqr</url-pattern>
-    </servlet-mapping>
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>Teo</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>phone</param-name>
+        <param-value>Redmi Note 7</param-value>
+    </context-param>
 </web-app>
