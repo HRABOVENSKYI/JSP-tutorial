@@ -1,17 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/test_db" user="root"
-                   password="root"/>
-<sql:query var="rs" dataSource="${db}"> select * from student </sql:query>
-<c:forEach items="${rs.rows}" var="student">
-    <c:out value="${student.id}"/> : <c:out value="${student.name}"/> : <c:out value="${student.marks}"/>
-    <br> <%-- prints every record from the DB --%>
+<c:set var="str" value="Teodor writed this code"/>
+Length : ${fn:length(str)} <br> <%-- Length : 23 --%>
+<c:forEach items="${fn:split(str, ' ')}" var="s">
+    ${s} <br> <%-- Will print every word separately on a new line --%>
 </c:forEach>
+index : ${fn:indexOf(str, "d")} <br> <%-- Finds first index of d letter in the string --%>
+is there : ${fn:contains(str, "fff")} <br> <%-- Will print false because str does not contain "fff" --%>
 </body>
 </html>
